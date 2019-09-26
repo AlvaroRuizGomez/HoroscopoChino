@@ -1,13 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
 #rutas
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
+    # anyo = request.form['anyo']
     return render_template('index.html')
-@app.route('/rata')
+
+
+@app.route('/rata',methods=['GET', 'POST'])
 def rata():
+    # anyo = request.form['anyo']
     return render_template('rata.html')
 
 
